@@ -19,11 +19,7 @@ export class AppController {
     return transactions;
   }
 
-  @Get('/transaction/:title')
-  async getTransactionByTitle(@Param('title') title: string) {
-    const transaction = await this.appService.getTransactionByTitle(title);
-    return transaction;
-  }
+  
 
   @Put('/transaction/:id')
   async updateTransaction(@Param('id') id: string, @Body() data: UpdateTransactionDto) {

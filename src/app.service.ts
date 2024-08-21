@@ -21,15 +21,7 @@ export class AppService {
       return transactions;
     }
 
-    async getTransactionByTitle (title: string){
-      const transaction = await this.prismaService.transaction.findMany({
-        where:{
-          title: {contains: title, mode: 'insensitive'}
-        }
-      });
 
-      return transaction;
-    }
 
     async updateTransaction(id: string, data: UpdateTransactionDto){
       const transaction = await this.prismaService.transaction.update({
